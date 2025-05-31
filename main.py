@@ -4,7 +4,7 @@ import sys
 
 from aiogram import Bot, Dispatcher
 
-from STEP1.handlers import echo, common, form
+from STEP1.handlers import echo, common, form, menu
 from STEP1.settings import API_TOKEN
 
 
@@ -18,6 +18,7 @@ async def main() -> None:
     bot = Bot(token=API_TOKEN)
     dp.include_router(common.router)
     dp.include_router(form.router)
+    dp.include_router(menu.router)
     dp.include_router(echo.router)
     await dp.start_polling(bot)
 
