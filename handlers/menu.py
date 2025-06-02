@@ -23,7 +23,7 @@ async def cmd_menu(message: Message) -> None:
 
 
 
-@router.callback_query()
+@router.callback_query(lambda c: c.data in ["Python", "Go", "Rust"])
 async def handle_callback(callback: CallbackQuery):
     data = callback.data
     user = callback.from_user

@@ -5,7 +5,7 @@ from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
-from STEP1.memory_storage import USER_DATA
+from memory_storage import USER_DATA
 
 router = Router()
 

@@ -5,14 +5,14 @@ from aiogram.filters import CommandStart, Command
 from aiogram.fsm.context import FSMContext
 from aiogram.types import Message
 
-from STEP1.memory_storage import UserState, USER_DATA
+from memory_storage import UserState, USER_DATA
 
 router = Router()
 
 @router.message(Command("form"))
 async def cmd_name(message: Message, state: FSMContext) -> None:
     await message.answer(
-        text="What is your name?"
+        text="Как тебя зовут?"
     )
     await state.set_state(UserState.name)
 
@@ -23,7 +23,7 @@ async def age_choice(message: Message, state: FSMContext) -> None:
     USER_DATA["name"] = name
     await state.update_data(name=name)
     await message.answer(
-        text="How old are you?"
+        text="Сколько тебе лет?"
     )
     await state.set_state(UserState.age)
 
@@ -35,7 +35,7 @@ async def favorite_programming_language_choice(message: Message, state: FSMConte
     USER_DATA["age"] = age
     await state.update_data(age=age)
     await message.answer(
-        text="What is your favorite programming language?"
+        text="Какой твой любимый язык программирования?"
     )
     await state.set_state(UserState.favorite_programming_language)
 

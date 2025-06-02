@@ -8,4 +8,10 @@ class UserState(StatesGroup):
 
 
 
+class SurveyState(StatesGroup):
+    experience = State()
+    technology = State()
+
+
+
 USER_DATA = dict()
